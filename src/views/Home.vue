@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div>
+      <el-input v-model="plainText" placeholder="输入明文"/>
+    </div>
+
+    <el-button @click="encrypt">加密</el-button>
+
+    <div>
+      <el-input v-model="cipherText" placeholder="输入密文"/>
+    </div>
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    
+  },
+  data() {
+    return {
+      plainText: '',
+      cipherText: ''
+    }
+  },
+  methods: {
+    encrypt() {
+      console.log('encrypt')
+    }
   }
 };
 </script>

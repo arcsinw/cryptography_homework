@@ -1,8 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Crypto from "../views/Crypto.vue"
+import RSACrypto from "../views/rsa/RSACrypto.vue"
 
 Vue.use(VueRouter);
+
 
 const routes = [
   {
@@ -18,6 +21,16 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/crypto",
+    name: "Crypto",
+    component: Crypto
+  },
+  {
+    path: '/rsa',
+    name: 'RSACrypto',
+    component: RSACrypto
   }
 ];
 

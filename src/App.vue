@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link :to="{name: 'RSACrypto', params: {type: 'rsa'}}">RSA</router-link> |
+      <router-link :to="{name: 'Crypto', params: {type: 'elgamal'}}">ElGamal</router-link> |
+      <router-link :to="{name: 'Crypto', params: {type: 'dsa'}}">DSA</router-link> |
+      <router-link to="/diff">Diffie-Hellman</router-link> |
+      <router-link to="/elgamal">椭圆曲线ElGamal</router-link> |
+      <router-link to="/elgamal">椭圆曲线Diffie-Hellman</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />

@@ -1,15 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    
+    {{type}}
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "Crypto",
   components: {
     
+  },
+  data() {
+    return {
+      type: this.$route.params.type
+    }
   }
 };
 </script>
