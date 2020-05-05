@@ -1,4 +1,6 @@
-# crypto_homework
+# cryptography_homework
+
+![Build and deploy to Github pages](https://github.com/arcsinw/cryptography_homework/workflows/Build%20and%20deploy%20to%20Github%20pages/badge.svg?branch=master&event=push)
 
 ## Project setup
 ```
