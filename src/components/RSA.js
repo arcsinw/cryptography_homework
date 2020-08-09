@@ -2,8 +2,12 @@
  * RSA加解密库
  ********/
 
-function isPrime(number) {
-
+/**
+ * 判断是否素数
+ * @param {*} number
+ */
+export function isPrime(number) {
+    console.log(number)
 }
 
 /**
@@ -11,7 +15,7 @@ function isPrime(number) {
  * @param {*} number 
  */
 export function modInverse(number) {
-
+    console.log(number)
 }
 
 /**
@@ -39,7 +43,5 @@ export function encrypt(message) {
  * @param {String} cipherText 
  */
 export function decrypt(cipherText) {
-    
-    
     console.log(cipherText)
 }
