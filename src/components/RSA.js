@@ -109,8 +109,8 @@ export function generateKeyPair(p, q) {
 
 /**
  * 加密
- * @param {BigNumber} message 
- * @param {*} publicKey
+ * @param {BigNumber} message 要加密的消息
+ * @param {Object} publicKey 公钥
  */
 export function encrypt(message, publicKey) {
     let cipherText = new BigNumber(message).pow(publicKey.key).mod(publicKey.n)
@@ -119,10 +119,31 @@ export function encrypt(message, publicKey) {
 
 /**
  * 解密
- * @param {String} cipherText 
+ * @param {String} cipherText 密文
+ * @param {String} privateKey 私钥
  */
 export function decrypt(cipherText, privateKey) {
     // let plainText = Math.pow(cipherText, privateKey.key) % privateKey.n
   let plainText = new BigNumber(cipherText).pow(privateKey.key).mod(privateKey.n)
     return plainText
+}
+
+/**
+ * 签名
+ * @param {String} message 消息
+ * @param {Object} privateKey 私钥
+ */
+export function sign(message, privateKey) {
+  let s = new BigNumber(message).pow(privateKey.key).mod(privateKey.n);
+  return s
+}
+
+/**
+ * 验证
+ * @param {Object} sign 签名 sign.m 消息 sign.s 签名  {m : "", s: ""}
+ * @param {Object} publicKey 公钥 
+ */
+export function verify(sign, publicKey) {
+  return new BigNumber(sign.s).pow(publicKey.key).mod(publicKey.n) ===
+    new BigNumber(sign.m).pow(publicKey.n)
 }
